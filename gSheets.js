@@ -6,7 +6,7 @@ let selectedDensity = 0;
 let highRiskFactors = false;
 
 // Google Sheets API endpoint and API key
-const API_ENDPOINT = `https://sheets.googleapis.com/v4/spreadsheets/1UyCYHC8JIr_O-4xzDRgTyP37gcr7dytKc69SF6oK17Q/values/Sheet1?key=AIzaSyAWyCN7Jf8S47SiYJXiSzr8vmd3T3dYTcE`;
+const API_ENDPOINT = `https://sheets.googleapis.com/v4/spreadsheets/1UyCYHC8JIr_O-4xzDRgTyP37gcr7dytKc69SF6oK17Q/values/Sheet1`;
 
 // Function to fetch data from Google Sheets
 async function fetchData() {

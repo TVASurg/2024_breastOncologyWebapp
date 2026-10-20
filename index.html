@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TVASurg Breast Oncoplasty Decision Aid Webapp</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-bg {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="gSheets.js?081206"></script>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Top Row -->
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="card-title text-center">The Toronto Video Atlas of Surgery <br/>Breast oncology surgical procedure decision aid</h3>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tumor location</h5>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation01" value="upper inner">
+                          <label class="form-check-label" for="tumorLocation01">
+                            Upper inner breast
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation02" value="twelve o clock">
+                          <label class="form-check-label" for="tumorLocation02">
+                            12 o' clock position
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation03" value="upper outer">
+                          <label class="form-check-label" for="tumorLocation03">
+                            Upper outer breast
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation04" value="lower outer">
+                          <label class="form-check-label" for="tumorLocation04">
+                            Lower outer breast
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation05" value="six o clock">
+                          <label class="form-check-label" for="tumorLocation05">
+                            6 o' clock position
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation06" value="lower inner">
+                          <label class="form-check-label" for="tumorLocation06">
+                            Lower inner breast
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="tumorLocation" id="tumorLocation07" value="central">
+                          <label class="form-check-label" for="tumorLocation07">
+                            Central
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Volume to be removed</h5>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="volumeRemoved" id="volumeRemoved01" value="lt20">
+                          <label class="form-check-label" for="volumeRemoved01">
+                            &lt; 20% volume (1 quadrant)
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="volumeRemoved" id="volumeRemoved02" value="20to50">
+                          <label class="form-check-label" for="volumeRemoved02">
+                            20 - 50% volume<br/> (> 1 quadrant)
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="volumeRemoved" id="volumeRemoved03" value="gt50">
+                          <label class="form-check-label" for="volumeRemoved03">
+                            &gt; 50% volume (> 2 quadrants)
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Patient assessment</h5>
+<!--                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="breastDensity" id="breastDensity01" value=1>
+                          <label class="form-check-label" for="breastDensity01">
+                            Density - Fatty (BIRADS 1)
+                          </label>
+                        </div>-->
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="breastDensity" id="breastDensity02" value=2>
+                          <label class="form-check-label" for="breastDensity02">
+                            Density - Fatty
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="breastDensity" id="breastDensity03" value=3>
+                          <label class="form-check-label" for="breastDensity03">
+                            Density - Dense
+                          </label>
+                        </div>
+<!--                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="breastDensity" id="breastDensity04" value=4>
+                          <label class="form-check-label" for="breastDensity04">
+                            Density - Extremely dense (BIRADS 4)
+                          </label>
+                        </div>-->
+                        <hr/>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="smoking">
+                          <label class="form-check-label" for="smoking">
+                            Smoking
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="diabetic">
+                          <label class="form-check-label" for="diabetic">
+                            Diabetic
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Middle Row -->
+        <div class="row mt-5 pt-5">
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <button type="button" class="btn btn-primary" id="submitButton" onclick="submitInquiry()">Submit</button>
+            </div>
+        </div>
+        <hr/>
+        <!-- Bottom Row -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <div class="card custom-bg">
+                    <div class="card-body">
+                        <h5 class="card-title">Recommended procedures and techniques</h5>
+                        
+                        <div class="card-text" id="data">
+                        <!--test layout-->
+<!--                        <ul>
+                        <li>
+                    
+                            <a href='https://pie.med.utoronto.ca/TVASurg/project/oncoplastic-lumpectomy-with-inferior-pedicle-wise-pattern-reduction/' target='_blank'>Wise pattern reduction + pedicled reconstruction (Level 3 procedure)</a>
+                            
+                            <a href='https://pie.med.utoronto.ca/TVASurg/project/oncoplastic-lumpectomy-with-inferior-pedicle-wise-pattern-reduction/' target='_blank'><img class='img-fluid' src='https://pie.med.utoronto.ca/TVASurg/wp-content/uploads/2023/03/feature-image-1000-500-800x500.png'></a>
+                        </li>
+                        </ul>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row pt-5">
+            <div class="d-grid gap-2 col-3 mx-auto mb-5">
+                <button type="button" class="btn btn-success" id="submitButton" onclick="fetchAllData()" data-bs-toggle="modal" data-bs-target="#allProcedures">See all procedures</button>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <p class="text-center">Please leave your feedback <a href="https://forms.gle/jdHTcZsZacZdK9rk8">here</a>. Your input will help refine and improve this decision aid.</p>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="allProcedures" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">All procedures</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Procedure</th>
+                          <th scope="col">Level</th>
+                          <th scope="col">Tumor location</th>
+                        </tr>
+                      </thead>
+                      <tbody id="modalPbody">
+                      </tbody>
+                    </table>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Technique</th>
+                          <th scope="col">Level</th>
+                          <th scope="col">Tumor location</th>
+                        </tr>
+                      </thead>
+                      <tbody id="modalTbody">
+                      </tbody>
+                    </table>  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
